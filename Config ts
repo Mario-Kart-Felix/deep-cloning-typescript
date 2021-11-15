@@ -1,0 +1,36 @@
+import * as path from 'path';
+import * as Webpack from 'webpack';
+import 'webpack-dev-server';
+import { webpackOptions } from './node_modules/osnack-frontend-shared/settings';
+
+const config: Webpack.Configuration = {
+   devServer: webpackOptions.devServer(__dirname, 8080),
+   mode: webpackOptions.mode,
+   devtool: webpackOptions.devtool,
+   resolve: webpackOptions.resolve([]),
+   entry: webpackOptions.entry(__dirname),
+   output: webpackOptions.output(__dirname),
+   externals: webpackOptions.externals({}),
+   module: webpackOptions.module([]),
+   plugins: webpackOptions.plugins(__dirname, [
+      {
+         from: path.resolve(__dirname, "public/images/"),
+         to: path.resolve(__dirname, './build/public/images/')
+      },
+      {
+         from: path.resolve(__dirname, "public/markdowns/"),
+         to: path.resolve(__dirname, './build/public/markdowns/')
+      },
+      {
+         from: path.resolve(__dirname, "public/robots.txt"),
+         to: path.resolve(__dirname, './build/public/')
+      },
+      {
+         from: path.resolve(__dirname, './node_modules/osnack-frontend-shared/public/markdowns'),
+         to: path.resolve(__dirname, './build/public/markdowns/')
+      }
+   ]),
+   optimization: webpackOptions.optimization,
+};
+
+export default config;
