@@ -1,0 +1,106 @@
+[XComGame.X2StrategyElement_DefaultResistanceActivities]
+;Good things
++Activities="ResAct_Mission_PrisonBreak_Success"
+
+; Bad things
++Activities="ResAct_Mission_PrisonBreak_Failed"
+
+[ResAct_Mission_PrisonBreak_Success X2ResistanceActivityTemplate]
+bAlwaysGood=true
+bMission=true
+
+[ResAct_Mission_PrisonBreak_Failed X2ResistanceActivityTemplate]
+bAlwaysGood=false
+bMission=true
+
+
+[WotC_Mission_PrisonBreak.X2StrategyElement_CovertActions_PrisonBreak]
+; Settings for the "Locate ADVENT Prison Compound" Covert Action
+; Warning: If you activate bRandomClass, make sure you update the following:
+;
+;  RandomSoldierClasses under [XComGame.XComGameState_CovertAction] in XComGameBoard.ini
+;
+; to support your custom classes or character, or you won't be able to particpate.
+
+;
+; StaffSlots adds and modifies the properties of the staff slots of the Covert Action.
+;
+; StaffSlotTemplateName = The template name of the slot to use. You can find the list in the filters section below.
+;		NOTE: If the slot is a staff slot (Scientist or Engineer), then no additional parameters are considered for evaluation.
+;
+; MinRank				= the minimum rank for a soldier to participate in the Covert Action.
+; bRandomClass			= if true, chooses a random class from RandomSoldierClasses. See above for more details.
+; bFactionClass			= if true, chooses a random faction class.
+; bChanceFame			= if true, rolls for a chance of a famous soldier requirement. Not sure if used.
+; bReduceRisk			= if true, then this slot will reduce the risks associated with the CA.
+; bOptional				= if true, then the staff in that slot will be optional and not required to start the CA
+;		NOTE: If bOptional is true, then only bFactionClass and MinRank are considered for evaluation.
+;
+
++StaffSlots = ( StaffSlotTemplateName = CovertActionSoldierStaffSlot, MinRank = 4, bOptional = false, bRandomClass = false, bFactionClass = false, bChanceFame = false, bReduceRisk = false)
++StaffSlots = ( StaffSlotTemplateName = CovertActionSoldierStaffSlot, MinRank = 3, bOptional = false, bRandomClass = false, bFactionClass = false, bChanceFame = false, bReduceRisk = false)
+;+StaffSlots = ( StaffSlotTemplateName = CovertActionScientistStaffSlot)
+
+;
+; OptionalCosts adds new optional resource costs to reduce the risks of the Covert Action
+; ResourceTemplateName = the name of the template of the resource to consume once launched
+; Quantity			   = the number of this particular resource to use
+;
+
++OptionalCosts = (ResourceTemplateName = Intel,		Quantity = 35)
++OptionalCosts = (ResourceTemplateName = Supplies,	Quantity = 40)
+
+;
+; If defined, adds Risks to the Covert Action
+; This only requires the template name of the risk (there's only three I know of)
+;
+
++Risks = CovertActionRisk_SoldierWounded
++Risks = CovertActionRisk_SoldierCaptured
++Risks = CovertActionRisk_Ambush
+
+;
+; DO NOT REMOVE!!!
+; Filters are used to determine where StaffSlotTemplateName goes. 
+; SoldierSlotFilter is used for staffing the Covert Ops with a proper soldier
+; StaffSlotFilter is used for staffing the Covert Ops with a proper staff
+;
+
++SoldierSlotFilter=CovertActionRookieStaffSlot
++SoldierSlotFilter=CovertActionSoldierStaffSlot
+
++StaffSlotFilter=CovertActionScientistStaffSlot
++StaffSlotFilter=CovertActionEngineerStaffSlot
+
+[WotC_Mission_PrisonBreak.X2StrategyElement_Rewards_PrisonBreak]
+
+; Strategic Settings for Mission Pop-up and Generation
+
+; 3600 seconds * (24 * Num of Hours)
+
+; 17 Days
+MinPrisonBreakDuration = 75
+
+; 23 Days
+MaxPrisonBreakDuration = 150
+
+RequiredForceLevel = 3
+
+; Important. If there are more soldiers captured either by ADVENT or Chosen than this threshold, 
+;			 then the standard 6 mission prison break mission will take priority.
+;			 Otherwise, will always generate Variety 01 mission if below this threshold.
+CapturedUnitThreshold = 8
+
+; Only applies to Variety 01 of the mission Break mission.
+; ChanceForReward is evaluated first before all others, the higher the number, the better the chance.
+ChanceForReward					= 75
+; Applies to both standard (if less than 6) and variety 01 version of Prison Break mission
+; If no reward was picked (very very rare case) a rookie is picked as the reward.
+; For the standard mission, if there aren't enough captured soldiers around, then the game will start generating rookies and other personnel where vacant.
+ChanceForChosenCapturedSoldier	= 20
+ChanceForADVENTCapturedSoldier	= 25
+ChanceForRandomHighRankSoldier	= 25
+ChanceForRandomFactionSoldier	= 35
+ChanceForRandomScientist		= 40
+ChanceForRandomEngineer			= 40
+ChanceForRandomRookie			= 35
