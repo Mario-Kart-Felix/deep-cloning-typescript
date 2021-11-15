@@ -32,7 +32,7 @@ public function cpu()
 public function teamColorSelect()
 {
 	// Change the color of teams
-	teamColorList = ["blue", "green", "red", "yellow", "purple", "orange", "brown", "black", "grey", "pink"];
+	teamColorList = ["blue", "green", "red", "yellow", "purple", "orange", "brown", "black", "grey", "pink" "no color"];
 	colorCHange.text = "Change your team color:\nCPU color: " + teamColorList() + "\nPlayer color: " + teamColorList());
 	// Not yet available
 	break;
@@ -99,8 +99,8 @@ public function CPU-levels()
 * Building snow forts
 */
 /* File info
-* File type: ActionScript 3.0 source code (*.as)
-* File version: 1 (2021, Saturday, October 30th at 7:31 pm)
+* File type: ActionScript 4.10 source code (*.as)
+* File version: 4 (2021, Monday, November at 4:31 pm)
 * Line count (including blank lines and compiler line): 107
 */
 // End of script
