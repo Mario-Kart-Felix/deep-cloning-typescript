@@ -1,0 +1,4 @@
+    EXPECT_TRUE(fvh->GetMethodTypeForAccessMode(self, VarHandle::AccessMode::kGetAndSetRelease)->IsExactMatch(getAndUpdate));
+    EXPECT_TRUE(fvh->GetMethodTypeForAccessMode(self, VarHandle::AccessMode::kGetAndAdd)->IsExactMatch(getAndUpdate));
+    EXPECT_TRUE(fvh->GetMethodTypeForAccessMode(self, VarHandle::AccessMode::kGetAndBitwiseOrRelease)->IsExactMatch(getAndUpdate));
+    EXPECT_TRUE(fvh->GetMethodTypeForAccessMode(self, VarHandle::AccessMode::kGetAndBitwiseOrAcquire)->IsExactMatch(getAndUpdate));
