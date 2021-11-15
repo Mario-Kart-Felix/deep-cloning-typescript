@@ -1,0 +1,7 @@
+I want to genuinely trace and identify computers connecting to my server with malicious intend. I am quite new to networking world. That is trace malicious ip back to the actual computer.
+
+I wanted first to track the mac address. But this was not possible because I can basically get the mac addess localy. I thought of smothing like nesting arp request spoofing router address from the previous one to send arp request to the next hop. But I am not even sure whether this is possible. It looks like impossible.
+
+I try to get the geographical location but this was useless because the coordinate I get are from the city, meaning I can't basically know the precised coordinate.
+
+With a public IP, how could I trace a computer? I am looking for ideas, or forensic tools. Any thing that allows me to get additional information about the attacker rather than the basic traceroute information will be helpful
