@@ -1,0 +1,6 @@
+TTR: 42 Hours
+Initial Access: Exchange Exploited (ProxyShell)
+Discovery: ipconfig, nslookup, ping, KPortScan, etc.
+Execution: Fast Reverse Proxy & Plink
+Lateral Movement: RDP
+Impact: Data Encryption
