@@ -1,0 +1,12 @@
+crate-type = ["cdylib"]
+
+
+[dependencies]
+typescript-definitions = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+your `Cargo.toml` file and your code.
+
+
+## <a name='Features'></a>Features
+
+As we said before `typescript-descriptions` macros pollute your code with static strings and other garbage. Hence, by default, they only *work* in debug mode.
