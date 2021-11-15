@@ -1,0 +1,4 @@
+   "    return ((n - (1+g)) / float(n)) * old + ((1+g) / float(n)) * v\n",
+    "    # tune g online to achieve good prediction of conditional reward given chosen action\n",
+    "                if chosen==actual: self.low_bandits[2].update_reward(chosen,reward)# good when noncompliers have different distribution of rewards than compliers\n",
+    "                
