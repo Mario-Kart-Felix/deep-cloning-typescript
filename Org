@@ -1,0 +1,10 @@
+***** Thank you, Secret-Leaderships, for voting on Shakespeare-Bot.
+
+This bot wants to find the best and worst bots on Reddit. [[https://botrank.pastimes.eu/][You can view results here]].
+:END:
+
+
+**** Same guy writing the theme either way.
+:PROPERTIES:
+:Author: Solo_is_my_copliot
+:Score: 9
