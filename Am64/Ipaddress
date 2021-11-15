@@ -1,0 +1,6 @@
+IOCs 
+b.oracleservice.\top:8080
+194.5.249.24:8080
+198.23.214.117:8080
+hxxp://194.38.20.31/xms.ps1
+Webshell = C:\inetpub\wwwroot\aspnet_client_block_miner\etoin.aspx
