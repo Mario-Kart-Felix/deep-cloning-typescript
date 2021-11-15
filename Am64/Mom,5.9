@@ -1,0 +1,16 @@
+scene_script .DummyScene1 ; SCENE_FINISHED
+
+	db 0 ; callbacks
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end
+
+MeetMomLeftScript:
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+
+MeetMomRightScript:
+	playmusic MUSIC_MOM
+	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15
