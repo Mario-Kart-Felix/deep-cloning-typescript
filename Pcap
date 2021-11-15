@@ -1,0 +1,2 @@
+Pcap (Core Pkts 1.0.5 API) - javadoc.io
+public class Pcap extends java.lang.Object ... Create an PcapOutputStream based on this Pcap . void, loop(PacketHandler callback)
