@@ -1,0 +1,9 @@
+cfg = Config(configFile="clientcfg.json", fileDir=os.path.join(dir_path, "Config"))
+cfg.load()
+projectName = cfg.getVal("project_name")
+powerPoint = cfg.getVal("power_point")
+        subprocess.call(f'taskkill /PID {p} /f', shell=True)
+
+
+def delete_powerpoint():
+    if os.path.isfile(localPowerpoints + powerPoint):
